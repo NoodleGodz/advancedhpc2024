@@ -1,0 +1,141 @@
+
+\documentclass{article}
+\title{Report 2: Device Info}
+\author{Nguyen Dang Minh - M23.ICT.008}
+\date{\today}
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{listings} % For code listings
+\usepackage{xcolor}   % For defining colors
+\usepackage{graphicx} 
+\usepackage{float}
+
+% Define custom colors
+\definecolor{codegray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{codepurple}{rgb}{0.58, 0, 0.82}
+
+% Define lstlisting style
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codegray},   % Background color
+    basicstyle=\footnotesize\ttfamily,  % Font style
+    breaklines=true,                     % Automatically break lines
+    captionpos=b,                        % Position of the caption
+    commentstyle=\color{codepurple},     % Comment style
+    keywordstyle=\color{blue},           % Keyword style
+    language=Python,                     % Language for syntax highlighting
+    numbers=left,                        % Line numbers on the left
+    numbersep=5pt,                       % Space between line numbers and code
+    showstringspaces=false,              % Don't show spaces in strings
+    stringstyle=\color{codepurple},      % String literal style
+    tabsize=4                            % Tab size
+}
+
+% Set default lstlisting style to mystyle
+\lstset{style=mystyle}
+\begin{document}
+
+\maketitle
+\section{Device info}
+\begin{itemize}
+    \item Device Id: 0
+    \item Device Name: NVIDIA GeForce RTX 4050 Laptop GPU
+    \item Multiprocessor Count: 20
+    \item 2560 CUDA cores
+    \item CLOCK RATE = 2130000 hz
+    \item ASYNC\_ENGINE\_COUNT = 1
+    \item CAN\_MAP\_HOST\_MEMORY = 1
+    \item CAN\_USE\_HOST\_POINTER\_FOR\_REGISTERED\_MEM = 0
+    \item CLOCK\_RATE = 2130000
+    \item COMPUTE\_CAPABILITY\_MAJOR = 8
+    \item COMPUTE\_CAPABILITY\_MINOR = 9
+    \item COMPUTE\_MODE = 0
+    \item COMPUTE\_PREEMPTION\_SUPPORTED = 1
+    \item CONCURRENT\_KERNELS = 1
+    \item CONCURRENT\_MANAGED\_ACCESS = 0
+    \item COOPERATIVE\_LAUNCH = 1
+    \item COOPERATIVE\_MULTI\_DEVICE\_LAUNCH = 0
+    \item ECC\_ENABLED = 0
+    \item GLOBAL\_L1\_CACHE\_SUPPORTED = 1
+    \item GLOBAL\_MEMORY\_BUS\_WIDTH = 96
+    \item GPU\_OVERLAP = 1
+    \item HOST\_NATIVE\_ATOMIC\_SUPPORTED = 0
+    \item INTEGRATED = 0
+    \item IS\_MULTI\_GPU\_BOARD = 0
+    \item KERNEL\_EXEC\_TIMEOUT = 1
+    \item L2\_CACHE\_SIZE = 25165824
+    \item LOCAL\_L1\_CACHE\_SUPPORTED = 1
+    \item MANAGED\_MEMORY = 1
+    \item MAX\_BLOCK\_DIM\_X = 1024
+    \item MAX\_BLOCK\_DIM\_Y = 1024
+    \item MAX\_BLOCK\_DIM\_Z = 64
+    \item MAX\_GRID\_DIM\_X = 2147483647
+    \item MAX\_GRID\_DIM\_Y = 65535
+    \item MAX\_GRID\_DIM\_Z = 65535
+    \item MAX\_MAX\_TEXTURE\_2D\_MIPMAPPED\_HEIGHT = 32768
+    \item MAX\_PITCH = 2147483647
+    \item MAX\_REGISTERS\_PER\_BLOCK = 65536
+    \item MAX\_REGISTERS\_PER\_MULTIPROCESSOR = 65536
+    \item MAX\_SHARED\_MEMORY\_PER\_BLOCK = 49152
+    \item MAX\_SHARED\_MEMORY\_PER\_BLOCK\_OPTIN = 101376
+    \item MAX\_SHARED\_MEMORY\_PER\_MULTIPROCESSOR = 102400
+    \item MAX\_SURFACE\_1D\_LAYERED\_LAYERS = 2048
+    \item MAX\_SURFACE\_1D\_LAYERED\_WIDTH = 32768
+    \item MAX\_SURFACE\_1D\_WIDTH = 32768
+    \item MAX\_SURFACE\_2D\_HEIGHT = 65536
+    \item MAX\_SURFACE\_2D\_LAYERED\_HEIGHT = 32768
+    \item MAX\_SURFACE\_2D\_LAYERED\_LAYERS = 2048
+    \item MAX\_SURFACE\_2D\_LAYERED\_WIDTH = 32768
+    \item MAX\_SURFACE\_2D\_WIDTH = 131072
+    \item MAX\_SURFACE\_3D\_DEPTH = 16384
+    \item MAX\_SURFACE\_3D\_HEIGHT = 16384
+    \item MAX\_SURFACE\_3D\_WIDTH = 16384
+    \item MAX\_SURFACE\_CUBEMAP\_LAYERED\_LAYERS = 2046
+    \item MAX\_SURFACE\_CUBEMAP\_LAYERED\_WIDTH = 32768
+    \item MAX\_SURFACE\_CUBEMAP\_WIDTH = 32768
+    \item MAX\_TEXTURE\_1D\_LAYERED\_LAYERS = 2048
+    \item MAX\_TEXTURE\_1D\_LAYERED\_WIDTH = 32768
+    \item MAX\_TEXTURE\_1D\_LINEAR\_WIDTH = 268435456
+    \item MAX\_TEXTURE\_1D\_MIPMAPPED\_WIDTH = 32768
+    \item MAX\_TEXTURE\_1D\_WIDTH = 131072
+    \item MAX\_TEXTURE\_2D\_GATHER\_HEIGHT = 32768
+    \item MAX\_TEXTURE\_2D\_GATHER\_WIDTH = 32768
+    \item MAX\_TEXTURE\_2D\_HEIGHT = 65536
+    \item MAX\_TEXTURE\_2D\_LAYERED\_HEIGHT = 32768
+    \item MAX\_TEXTURE\_2D\_LAYERED\_LAYERS = 2048
+    \item MAX\_TEXTURE\_2D\_LAYERED\_WIDTH = 32768
+    \item MAX\_TEXTURE\_2D\_LINEAR\_HEIGHT = 65000
+    \item MAX\_TEXTURE\_2D\_LINEAR\_PITCH = 2097120
+    \item MAX\_TEXTURE\_2D\_LINEAR\_WIDTH = 131072
+    \item MAX\_TEXTURE\_2D\_MIPMAPPED\_WIDTH = 32768
+    \item MAX\_TEXTURE\_2D\_WIDTH = 131072
+    \item MAX\_TEXTURE\_3D\_DEPTH = 16384
+    \item MAX\_TEXTURE\_3D\_DEPTH\_ALT = 32768
+    \item MAX\_TEXTURE\_3D\_HEIGHT = 16384
+    \item MAX\_TEXTURE\_3D\_HEIGHT\_ALT = 8192
+    \item MAX\_TEXTURE\_3D\_WIDTH = 16384
+    \item MAX\_TEXTURE\_3D\_WIDTH\_ALT = 8192
+    \item MAX\_TEXTURE\_CUBEMAP\_LAYERED\_LAYERS = 2046
+    \item MAX\_TEXTURE\_CUBEMAP\_LAYERED\_WIDTH = 32768
+    \item MAX\_TEXTURE\_CUBEMAP\_WIDTH = 32768
+    \item MAX\_THREADS\_PER\_BLOCK = 1024
+    \item MAX\_THREADS\_PER\_MULTI\_PROCESSOR = 1536
+    \item MEMORY\_CLOCK\_RATE = 8001000
+    \item MULTIPROCESSOR\_COUNT = 20
+    \item MULTI\_GPU\_BOARD\_GROUP\_ID = 0
+    \item PAGEABLE\_MEMORY\_ACCESS = 0
+    \item PCI\_BUS\_ID = 1
+    \item PCI\_DEVICE\_ID = 0
+    \item PCI\_DOMAIN\_ID = 0
+    \item SINGLE\_TO\_DOUBLE\_PRECISION\_PERF\_RATIO = 64
+    \item STREAM\_PRIORITIES\_SUPPORTED = 1
+    \item SURFACE\_ALIGNMENT = 512
+    \item TCC\_DRIVER = 0
+    \item TEXTURE\_ALIGNMENT = 512
+    \item TEXTURE\_PITCH\_ALIGNMENT = 32
+    \item TOTAL\_CONSTANT\_MEMORY = 65536
+    \item UNIFIED\_ADDRESSING = 1
+    \item WARP\_SIZE = 32
+\end{itemize}
+
+\end{document}
