@@ -1,0 +1,45 @@
+
+\documentclass{article}
+\title{Report 3: CUDA}
+\author{Nguyen Dang Minh - M23.ICT.008}
+\date{\today}
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{listings} % For code listings
+\usepackage{xcolor}   % For defining colors
+\usepackage{graphicx} 
+\usepackage{float}
+
+% Define custom colors
+\definecolor{codegray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{codepurple}{rgb}{0.58, 0, 0.82}
+
+% Define lstlisting style
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codegray},   % Background color
+    basicstyle=\footnotesize\ttfamily,  % Font style
+    breaklines=true,                     % Automatically break lines
+    captionpos=b,                        % Position of the caption
+    commentstyle=\color{codepurple},     % Comment style
+    keywordstyle=\color{blue},           % Keyword style
+    language=Python,                     % Language for syntax highlighting
+    numbers=left,                        % Line numbers on the left
+    numbersep=5pt,                       % Space between line numbers and code
+    showstringspaces=false,              % Don't show spaces in strings
+    stringstyle=\color{codepurple},      % String literal style
+    tabsize=4                            % Tab size
+}
+
+
+\lstset{style=mystyle}
+\begin{document}
+
+\maketitle
+\section{Task}
+Apply greyscale to this image:
+
+\includegraphics{images\image1.jpg}
+
+
+\end{document}
