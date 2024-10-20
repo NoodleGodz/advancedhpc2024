@@ -42,12 +42,12 @@ Apply grayscale to this image:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{p1.png}
+    \includegraphics[width=1\linewidth]{output.png}
 \end{figure} 
 Information: 
 \begin{itemize}
-    \item Height: 563
-    \item Weight: 900
+    \item Height: 3880
+    \item Weight: 6972
     \item Channel: 3
 \end{itemize}
 
@@ -67,13 +67,13 @@ It isn't scale good at all.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{p2.png}
+    \includegraphics[width=1\linewidth]{output2.png}
     \caption{Output}
     \label{fig:enter-label}
 \end{figure}
 
 
-Time elapsed :   1.702965259552002
+Time elapsed :   83.45929431915283
 
 \section{Running using GPU}
 
@@ -86,13 +86,13 @@ def grayscale(src, dst):
     dst[tidx, 0] = dst[tidx, 1] = dst[tidx, 2] = g
 \end{lstlisting}
 
-Time elapsed :  0.13646912574768066
+Time elapsed :  0.14880847930908203
 
-x12 speed with GPU
+x560 speed with GPU
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{p2.png}
+    \includegraphics[width=1\linewidth]{output2.png}
     \caption{Output}
     \label{fig:enter-label}
 \end{figure}
@@ -103,13 +103,28 @@ x12 speed with GPU
 We plot the time comparison between different block sizes. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.76\linewidth]{2d.png}
+    \includegraphics[width=0.76\linewidth]{output3.png}
 \end{figure}
+
+\begin{itemize}
+    \item Block size = 32, Time = 0.013530492782592773
+    \item Block size = 64, Time = 0.01461338996887207
+    \item Block size = 96, Time = 0.0068094730377197266
+    \item Block size = 128, Time = 0.006823539733886719
+\end{itemize}
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.76\linewidth]{3d.png}
+    \includegraphics[width=0.76\linewidth]{output4.png}
 \end{figure}
+
+\begin{itemize}
+    \item Block size = 8, Time = 0.13007044792175293
+    \item Block size = 16, Time = 0.00886082649230957
+    \item Block size = 24, Time = 0.013803958892822266
+    \item Block size = 32, Time = 0.01651167869567871
+\end{itemize}
 
 \section{Conclusions}
 \begin{itemize}
