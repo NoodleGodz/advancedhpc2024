@@ -1,6 +1,6 @@
 
 \documentclass{article}
-\title{Report 3: CUDA}
+\title{Report 4: Threads}
 \author{Nguyen Dang Minh - M23.ICT.008}
 \date{\today}
 
@@ -42,69 +42,81 @@ Apply grayscale to this image:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{image1.jpg}
-\end{figure}
-
+    \includegraphics[width=1\linewidth]{p1.png}
+\end{figure} 
 Information: 
 \begin{itemize}
-    \item Height: 472
-    \item Weight: 800
+    \item Height: 563
+    \item Weight: 900
     \item Channel: 3
 \end{itemize}
 
 
 \section{Running using CPU}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{image3.png}
-    \caption{Result of greyscale using CPU}
-    \label{fig:enter-label}
-\end{figure}
 
+We defined a function to convert an image to grayscale on the CPU. 
 \begin{lstlisting}[language=Python]
 for i in range(H):
   for j in range(W):
-    g = (image[i][j][0] + image[i][j][1] + image[i][j][2]) // 3
+    g = np.uint8((float(image[i][j][0]) + float(image[i][j][1]) + float(image[i][j][2])) // 3)
     array[i][j]= [g]*3
+    del g
 \end{lstlisting}
+It isn't scale good at all.
 
-Time elapsed :  1.9526922702789307
-
-\section{Running using GPU}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{image3.png}
-    \caption{Result of greyscale using GPU}
+    \includegraphics[width=1\linewidth]{p2.png}
+    \caption{Output}
     \label{fig:enter-label}
 \end{figure}
 
+
+Time elapsed :   1.702965259552002
+
+\section{Running using GPU}
+
+We defined a function to convert an image to grayscale on GPU.
 \begin{lstlisting}[language=Python]
+@cuda.jit
 def grayscale(src, dst):
     tidx = cuda.threadIdx.x + cuda.blockIdx.x * cuda.blockDim.x
     g = np.uint8((src[tidx, 0] + src[tidx, 1] + src[tidx, 2]) / 3)
     dst[tidx, 0] = dst[tidx, 1] = dst[tidx, 2] = g
 \end{lstlisting}
 
-Time elapsed :  0.13911175727844238s
+Time elapsed :  0.13646912574768066
+
+x12 speed with GPU
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{p2.png}
+    \caption{Output}
+    \label{fig:enter-label}
+\end{figure}
 
 
 \section{Plot a graph of block size vs time}
+
+We plot the time comparison between different block sizes. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{image.png}
-    \caption{image}
-    \label{fig:enter-label}
+    \includegraphics[width=0.76\linewidth]{2d.png}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{image2.png}
-    \caption{Enter Caption}
-    \label{fig:enter-label}
+    \includegraphics[width=0.76\linewidth]{3d.png}
 \end{figure}
 
 \section{Conclusions}
+\begin{itemize}
+    \item GPU runtime is quite random and chaotics
+    \item More block size seem better, but maybe to a limit.
+\end{itemize}
+
 
 \begin{itemize}
     \item 
