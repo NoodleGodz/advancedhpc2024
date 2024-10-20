@@ -1,0 +1,75 @@
+\documentclass{article}
+
+
+\title{Labwork 1: Gradient Descent}
+
+\begin{document}
+
+\maketitle
+
+\setlength\parindent{0pt}
+
+\section{Tasks:}
+
+Apply Gaussain blur to this image:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{../../images/image3.jpg}
+\end{figure} 
+Information: 
+\begin{itemize}
+    \item Height: 180
+    \item Weight: 320
+    \item Channel: 3
+\end{itemize}
+
+\section{Implementation}
+First, we define our kernel with a function:
+
+\begin{lstlisting}[language=Python]
+    def gauss_kernal():
+    sigma = 2
+    sumv = 0
+    kernal = []
+    for i in range(-3 , 4 ):
+        row = []
+        for j in range(-3 , 4 ):
+            g = (1 / (2 * math.pi * sigma ** 2)) * math.exp(-(i**2 + j**2) / (2 * sigma ** 2))
+            row.append(g)
+            sumv += g
+        kernal.append(row)
+
+    for i in range(7):
+        for j in range(7):
+            kernal[i][j] /= sumv
+    return kernal
+\end{lstlisting} 
+
+
+Hard coded for the 7x7 kernel.
+
+Then i do the convolution sum of that with each pixel using offset (-3,3) with our kernal
+\begin{lstlisting}[language=Python]
+    for h in range(x_step):
+    for w in range(y_step):
+            for c in range(C):  
+                w_sum = 0
+                for i in range(7):
+                    for j in range(7):
+                        w_sum += hostInp[h + i][w + j][c] * k[i][j]
+                output[h][w][c] = int(w_sum)
+\end{lstlisting} 
+ 
+Time elapsed in CPU : 8.981184720993042
+
+\section{GPU}
+
+
+
+
+In this labwork, we did this, that, and the result is this.
+
+An interesting finding is that.....
+
+\end{document}
